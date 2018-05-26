@@ -25,6 +25,8 @@ module Spree
       #filling up all udfs
       #not sure if necessary by offsite payments
       @payment_method_id = payment_method.id #udf4
+      Rails.logger.info "product info"
+      Rails.logger.info @productinfo
       
       @checksum = payment_method.checksum([@txnid, @amount, @productinfo, @firstname, @email, @lastname, @phone, @city, @payment_method_id, '', '', '', '', '', '']);
       @service_provider = payment_method.service_provider
